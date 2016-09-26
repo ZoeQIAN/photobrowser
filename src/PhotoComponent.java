@@ -1,7 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -15,28 +14,28 @@ import java.util.ArrayList;
  */
 public class PhotoComponent extends JComponent implements MouseListener, MouseMotionListener {
 
-    public void PhotoComponent() {
+    public PhotoComponent() {
         setSize(new Dimension(200,300));
         setPreferredSize(new Dimension(200,300));
         isLoaded = false;
         isFlipped = false;
         drawing = false;
         addMouseListener(this);
-        start = new ArrayList<Point>();
-        end = new ArrayList<Point>();
-        if(start == null){
-            System.out.println("[Debug] s null ");
-        }
+        addMouseMotionListener(this);
+        strokeSet = new ArrayList<>();
     }
-    private ArrayList<Point> start,  end;
+    private ArrayList<ArrayList<Point>> strokeSet;
+    private ArrayList<Point> linePnts;
     private int upperBorder, downBorder, leftBorder, rightBorder;
     private boolean drawing;
 
     public void mouseDragged(MouseEvent e){
+        System.out.println("[Debug] Dragged");
         Point p = e.getPoint();
         if(isFlipped && drawing && inBorder(p)){
-            end.add(p);
+            linePnts.add(p);
         }
+        repaint();
     }
 
     public void mouseMoved(MouseEvent e){
@@ -73,7 +72,9 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
         Point p = e.getPoint();
         if(isFlipped && inBorder(p)){
             drawing = true;
-            start.add(p);
+            linePnts = new ArrayList<>();
+            linePnts.add(p);
+            strokeSet.add(linePnts);
         }
     }
     @Override
@@ -95,9 +96,11 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
                 g.setColor(Color.black);
 
 
-//                for(int i =0; i<end.size(); i++){
-//                    g.drawLine(start.get(i).x, start.get(i).y, end.get(i).x,end.get(i).y);
-//                }
+                for(ArrayList<Point> l : strokeSet){
+                    for(int i=0; i<l.size()-1; i++){
+                        g.drawLine(l.get(i).x, l.get(i).y, l.get(i+1).x,l.get(i+1).y);
+                    }
+                }
             }
             else{
                 g.drawImage(photo,getWidth()/2-photo.getWidth()/2,getHeight()/2-photo.getHeight()/2,this);

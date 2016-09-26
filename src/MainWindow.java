@@ -131,6 +131,7 @@ public class MainWindow extends JFrame{
             photo.loadPhoto(file);
             add(photoScrPane,BorderLayout.CENTER);
             addMouseListener(photo);
+			addMouseMotionListener(photo);
 	     }
 	}
 	
