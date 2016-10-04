@@ -5,6 +5,7 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -26,6 +27,8 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
 
         addKeyListener(this);
         isTyping = false;
+        textSet = new ArrayList<>();
+        textPos = new ArrayList<>();
     }
 
 
@@ -50,6 +53,7 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
     public void mouseMoved(MouseEvent e){
 
     }
+
     public void mouseClicked(MouseEvent e){
         System.out.println("[Debug] Clicked");
         if(e.getClickCount()==2){
@@ -57,6 +61,10 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
             isTyping = false;
         }
         else if(e.getClickCount() ==1){
+            if(texts!=null && isTyping && !texts.isEmpty()){
+                textSet.add(texts);
+                textPos.add(pos);
+            }
             isTyping = true;
             lineLen = 0;
             texts = new ArrayList<>();
@@ -103,9 +111,11 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
      */
     private boolean isTyping;
     private ArrayList<String> texts;
+    private ArrayList< ArrayList <String> > textSet;
     private String word;
     private int lineLen;
     private Point pos;
+    private ArrayList<Point> textPos;
     private final int fontSize = 20;
     public void keyTyped(KeyEvent e){
         if(isTyping){
@@ -155,39 +165,14 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
                         g.drawLine(l.get(i).x, l.get(i).y, l.get(i+1).x,l.get(i+1).y);
                     }
                 }
-                
+
 
                 // render text
-                g.setFont(new Font("New Times Roman",Font.PLAIN,fontSize));
-                String line = "";
-                int lineNum = 0;
-                for(String w : texts){
-                    if(g.getFontMetrics().stringWidth(line+w)+pos.x > rightBorder){
-                        if(!line.isEmpty()) {
-                            g.drawString(line, pos.x, pos.y + lineNum * g.getFontMetrics().getHeight());
-                            lineNum+=1;
-                        }
-                        while(pos.x+g.getFontMetrics().stringWidth(w)>rightBorder){
-                            for(int i=1; i<=w.length();i++){
-                                if(pos.x+g.getFontMetrics().stringWidth(w.substring(0,i))>rightBorder){
-                                    line = w.substring(0,i-1);
-                                    w = w.substring(i-1);
-                                    break;
-                                }
-                            }
-                            g.drawString(line,pos.x,pos.y+lineNum*g.getFontMetrics().getHeight());
-                            lineNum +=1;
-                        }
-                        line = w+' ';
+                for(int i =0; i<textSet.size(); i++){
+                    renderText(textSet.get(i),g, textPos.get(i));
+                }
+                renderText(texts,g,pos);
 
-                    }
-                    else{
-                        line+=w+' ';
-                    }
-                }
-                if(!line.isEmpty()){
-                    g.drawString(line,pos.x,pos.y+lineNum*g.getFontMetrics().getHeight());
-                }
 
             }
             else{
@@ -198,7 +183,38 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
 
     }
 
+    private void renderText(ArrayList<String> t, Graphics2D g, Point pos){
+        g.setFont(new Font("New Times Roman",Font.PLAIN,fontSize));
+        String line = "";
+        int lineNum = 0;
+        for(String w : t){
+            if(g.getFontMetrics().stringWidth(line+w)+pos.x > rightBorder){
+                if(!line.isEmpty()) {
+                    g.drawString(line, pos.x, pos.y + lineNum * g.getFontMetrics().getHeight());
+                    lineNum+=1;
+                }
+                while(pos.x+g.getFontMetrics().stringWidth(w)>rightBorder){
+                    for(int i=1; i<=w.length();i++){
+                        if(pos.x+g.getFontMetrics().stringWidth(w.substring(0,i))>rightBorder){
+                            line = w.substring(0,i-1);
+                            w = w.substring(i-1);
+                            break;
+                        }
+                    }
+                    g.drawString(line,pos.x,pos.y+lineNum*g.getFontMetrics().getHeight());
+                    lineNum +=1;
+                }
+                line = w+' ';
 
+            }
+            else{
+                line+=w+' ';
+            }
+        }
+        if(!line.isEmpty()){
+            g.drawString(line,pos.x,pos.y+lineNum*g.getFontMetrics().getHeight());
+        }
+    }
 
     public void loadPhoto(String file){
         try{
@@ -226,16 +242,8 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
         return photo;
     }
 
-    public String getAnno() {
-        return anno;
-    }
-
     public String getStateInfo() {
         return stateInfo;
-    }
-
-    public void setAnno(String anno) {
-        this.anno = anno;
     }
 
     public void setFlipped(boolean flipped) {
@@ -249,7 +257,6 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
     private String stateInfo;
     private BufferedImage photo;
     private boolean isFlipped;
-    private String anno;
     private boolean isLoaded;
 
 }
