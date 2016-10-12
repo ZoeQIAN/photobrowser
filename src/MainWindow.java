@@ -84,17 +84,17 @@ public class MainWindow extends JFrame{
 
 		JToggleButton tBtn = new JToggleButton(FAMILY);
 		tBtn.setActionCommand(FAMILY);
-		tBtn.addActionListener(event->categoryChoosen(event));
+		tBtn.addActionListener(event->categoryChosen(event));
 		toolBar.add(tBtn);
 
 		tBtn = new JToggleButton(VACATION);
 		tBtn.setActionCommand(VACATION);
-		tBtn.addActionListener(event->categoryChoosen(event));
+		tBtn.addActionListener(event->categoryChosen(event));
 		toolBar.add(tBtn);
 
 		tBtn = new JToggleButton(SCHOOL);
 		tBtn.setActionCommand(SCHOOL);
-		tBtn.addActionListener(event->categoryChoosen(event));
+		tBtn.addActionListener(event->categoryChosen(event));
 		toolBar.add(tBtn);
 	}
 	private void initPhotoComp(){
@@ -149,10 +149,16 @@ public class MainWindow extends JFrame{
 	
 	private void deletePhoto(){
 		updateStatus("Delete");
+		photoScrPane.remove(photo);
+		remove(photoScrPane);
+		photo = null;
+		repaint();
 	}
 	
 	private void quitApp(){
 		updateStatus("Quit");
+		dispose();
+		System.exit(0);
 	}
 	
 	private void photoViewer(){
@@ -167,7 +173,7 @@ public class MainWindow extends JFrame{
 		updateStatus("Split Mode");
 	}
 	
-	private void categoryChoosen(ActionEvent e){
+	private void categoryChosen(ActionEvent e){
 		Object src = e.getSource();
 		if(src instanceof JToggleButton){
 			JToggleButton btn = (JToggleButton)src;

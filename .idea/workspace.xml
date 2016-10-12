@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8102c204-f59e-4dcf-8172-5710b77fd605" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ImageNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Node.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PathNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RootNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SceneGraphDisplay.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ShapeNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TextNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PhotoComponent.java" afterPath="$PROJECT_DIR$/src/PhotoComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainWindow.java" afterPath="$PROJECT_DIR$/src/MainWindow.java" />
     </list>
     <ignored path="PhotoBrowser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,36 +34,111 @@
       <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="148" column="4" selection-start-line="148" selection-start-column="4" selection-end-line="148" selection-end-column="4" />
+            <state relative-caret-position="468">
+              <caret line="160" column="21" selection-start-line="160" selection-start-column="21" selection-end-line="160" selection-end-column="21" />
               <folding>
                 <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-                <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoComponent.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PhotoComponent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+            <state relative-caret-position="172">
+              <caret line="219" column="12" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
+                <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
-                <element signature="method#loadPhoto#0;class#PhotoComponent#0" expanded="false" />
+                <element signature="method#renderText#0;class#PhotoComponent#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#980#981#0" expanded="true" />
+                <element signature="e#1011#1012#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContainerNode.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ContainerNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SceneGraphDisplay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SceneGraphDisplay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PathNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PathNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#192#193#0" expanded="true" />
+                <element signature="e#218#219#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TextNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#178#179#0" expanded="true" />
+                <element signature="e#218#219#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ImageNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding>
+                <element signature="e#145#146#0" expanded="true" />
+                <element signature="e#168#169#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,16 +164,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/PhotoComponent.java" />
+        <option value="$PROJECT_DIR$/src/SceneGrapheDisplay.java" />
+        <option value="$PROJECT_DIR$/src/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/ShapeNode.java" />
+        <option value="$PROJECT_DIR$/src/RootNode.java" />
+        <option value="$PROJECT_DIR$/src/PathNode.java" />
+        <option value="$PROJECT_DIR$/src/TextNode.java" />
+        <option value="$PROJECT_DIR$/src/ContainerNode.java" />
+        <option value="$PROJECT_DIR$/src/Node.java" />
+        <option value="$PROJECT_DIR$/src/ImageNode.java" />
+        <option value="$PROJECT_DIR$/src/SceneGraphDisplay.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-13" />
-    <option name="y" value="23" />
-    <option name="width" value="1235" />
-    <option name="height" value="777" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -134,9 +223,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -171,19 +259,21 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager" selected="Application.MainWindow">
     <configuration default="false" name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="MainWindow" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -437,8 +527,24 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.MainWindow" />
+    <configuration default="false" name="SceneGraph" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="SceneGraphDisplay" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PhotoBrowser" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.SceneGraph" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MainWindow" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -463,7 +569,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="23" width="1235" height="777" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -473,12 +579,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31638417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34130147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20323886" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -489,7 +596,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -505,7 +611,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -514,16 +620,238 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ContainerNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RootNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ShapeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#172#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PathNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#218#219#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TextNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#218#219#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#168#169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="148" column="4" selection-start-line="148" selection-start-column="4" selection-end-line="148" selection-end-column="4" />
+          <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#renderText#0;class#PhotoComponent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SceneGrapheDisplay.java" />
+    <entry file="file://$PROJECT_DIR$/src/RootNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="148" column="4" selection-start-line="148" selection-start-column="4" selection-end-line="148" selection-end-column="4" />
+          <folding>
+            <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#renderText#0;class#PhotoComponent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SceneGrapheDisplay.java" />
+    <entry file="file://$PROJECT_DIR$/src/RootNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="148" column="4" selection-start-line="148" selection-start-column="4" selection-end-line="148" selection-end-column="4" />
+          <folding>
+            <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#renderText#0;class#PhotoComponent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -535,9 +863,21 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -549,9 +889,8 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -565,13 +904,14 @@
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#loadPhoto#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#renderText#0;class#PhotoComponent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -583,9 +923,8 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -599,13 +938,14 @@
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#loadPhoto#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#renderText#0;class#PhotoComponent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -617,9 +957,8 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -633,13 +972,14 @@
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#loadPhoto#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#renderText#0;class#PhotoComponent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -651,9 +991,8 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -667,13 +1006,14 @@
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#loadPhoto#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#renderText#0;class#PhotoComponent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -685,9 +1025,8 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -699,9 +1038,8 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -713,9 +1051,8 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -727,9 +1064,8 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -741,9 +1077,8 @@
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -759,7 +1094,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="775" column="19" selection-start-line="775" selection-start-column="19" selection-end-line="775" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,37 +1118,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SceneGrapheDisplay.java" />
     <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="148" column="4" selection-start-line="148" selection-start-column="4" selection-end-line="148" selection-end-column="4" />
+        <state relative-caret-position="468">
+          <caret line="160" column="21" selection-start-line="160" selection-start-column="21" selection-end-line="160" selection-end-column="21" />
           <folding>
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
-            <element signature="method#categoryChoosen#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ShapeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#172#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RootNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PathNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#218#219#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TextNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#218#219#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        <state relative-caret-position="172">
+          <caret line="219" column="12" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#loadPhoto#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#renderText#0;class#PhotoComponent#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#168#169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SceneGraphDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ContainerNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
