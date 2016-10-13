@@ -17,7 +17,9 @@ public class PathNode extends Node {
 
     @Override
     protected void paint(Graphics2D g){
-        super.paint(g);
-        g.draw(gPath);
+        if(isVisible) {
+            super.paint(g);
+            g.draw(gPath);
+        }
     }
 }

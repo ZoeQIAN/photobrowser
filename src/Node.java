@@ -20,7 +20,8 @@ public abstract class Node {
 
     public Node(){
         posToParent = new Point(0,0);
-        color = new Color(0,0,0);
+        fillColor = new Color(0,0,0);
+        strokeColor = new Color(0,0,0);
         children = new ArrayList<>();
         isVisible = true;
     }

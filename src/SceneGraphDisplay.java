@@ -1,4 +1,3 @@
-import com.sun.tools.hat.internal.model.Root;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -6,6 +5,8 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.io.File;
 import java.io.IOException;
+import java.util.*;
+import java.util.Timer;
 
 /**
  * Created by zqian on 12/10/2016.
@@ -25,19 +26,32 @@ public class SceneGraphDisplay extends JComponent {
         mwin.add(display, BorderLayout.CENTER);
 
         RootNode root = new RootNode();
-        Image img = ImageIO.read(new File("/Users/zoe/Desktop/test.jpg"));
-        ImageNode iNode = new ImageNode(img);
-        iNode.setPos(new Point(10,10));
+//        Image img = ImageIO.read(new File("/Users/zoe/Desktop/test.jpg"));
+//        ImageNode iNode = new ImageNode(img);
+//        iNode.setPos(new Point(10,10));
+//
+//        root.addChild(iNode);
 
-        root.addChild(iNode);
+//        PathNode pNode = new PathNode();
+//        pNode.addPoint(new Point(0,0));
+//        pNode.addPoint(new Point(1,1));
+//        root.addChild(pNode);
+//
+//        ShapeNode sNode = new ShapeNode(new Ellipse2D.Double(100,100,100,100));
+//        root.addChild(sNode);
 
-        PathNode pNode = new PathNode();
-        pNode.addPoint(new Point(0,0));
-        pNode.addPoint(new Point(1,1));
-        root.addChild(pNode);
+        TextNode tNode = new TextNode(new Point(100,100));
+        tNode.setInsertion(new Point(100,100));
 
-        ShapeNode sNode = new ShapeNode(new Ellipse2D.Double(100,100,100,100));
-        root.addChild(sNode);
+        java.util.Timer t = new Timer();
+        t.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                tNode.insertionDisplay = !tNode.insertionDisplay;
+                mwin.repaint();
+            }
+        },500,500);
+        root.addChild(tNode);
 
         display.setRoot(root);
 
