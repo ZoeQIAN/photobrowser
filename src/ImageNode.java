@@ -9,8 +9,7 @@ public class ImageNode extends Node {
         img = i;
     }
     @Override
-    protected void paint(Graphics g){
-        Graphics2D g2 = (Graphics2D)g;
-        g2.drawImage(img,posToParent.x,posToParent.y,null);
+    protected void paint(Graphics2D g){
+        g.drawImage(img,posToParent.x,posToParent.y,null);
     }
 }

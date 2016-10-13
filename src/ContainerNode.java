@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 
 /**
  * Created by zqian on 12/10/2016.
@@ -7,8 +8,14 @@ public class ContainerNode extends Node{
 
 
     @Override
-    protected void paint(Graphics g){
-
+    protected void paint(Graphics2D g){
+        super.paint(g);
+        for(Node nn: children){
+            AffineTransform trns = g.getTransform();
+            trns.translate(nn.getPos().getX(), nn.getPos().getY());
+            g.setTransform(trns);
+            nn.paint(g);
+        }
     }
 
     @Override

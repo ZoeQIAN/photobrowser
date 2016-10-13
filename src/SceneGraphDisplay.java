@@ -3,6 +3,7 @@ import com.sun.tools.hat.internal.model.Root;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.io.File;
 import java.io.IOException;
 
@@ -30,6 +31,14 @@ public class SceneGraphDisplay extends JComponent {
 
         root.addChild(iNode);
 
+        PathNode pNode = new PathNode();
+        pNode.addPoint(new Point(0,0));
+        pNode.addPoint(new Point(1,1));
+        root.addChild(pNode);
+
+        ShapeNode sNode = new ShapeNode(new Ellipse2D.Double(100,100,100,100));
+        root.addChild(sNode);
+
         display.setRoot(root);
 
         mwin.setVisible(true);
@@ -44,7 +53,7 @@ public class SceneGraphDisplay extends JComponent {
     @Override
     public void paintComponent(Graphics g){
         if(rNode != null){
-            rNode.paint(g);
+            rNode.paint((Graphics2D)g);
         }
     }
 }

@@ -10,12 +10,25 @@ public abstract class Node {
     protected ArrayList<Node> children;
     protected boolean isVisible;
 
-    protected Color color;
+    protected Color fillColor;
+    protected Color strokeColor;
 
     protected int width, height;
     protected Point posToParent;
 
     Rectangle bound;
+
+    public Node(){
+        posToParent = new Point(0,0);
+        color = new Color(0,0,0);
+        children = new ArrayList<>();
+        isVisible = true;
+    }
+
+    public Node(Node p){
+        this();
+        parent = p;
+    }
 
     public void addChild(Node n){
         n.setParent(this);
@@ -44,7 +57,9 @@ public abstract class Node {
         return isVisible;
     }
 
-    protected abstract void paint(Graphics g);
+    protected void paint(Graphics2D g){
+        g.setColor(strokeColor);
+    };
 
     public int getWidth(){
         return width;

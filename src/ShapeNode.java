@@ -5,12 +5,21 @@ import java.awt.*;
  */
 public class ShapeNode extends Node {
     Shape shape;
+    public ShapeNode(){
+        super();
+    }
     public ShapeNode(Shape s){
+        super();
+        shape = s;
+    }
+    public void setShape(Shape s){
         shape = s;
     }
     @Override
-    protected void paint(Graphics g){
-        Graphics2D g2 = (Graphics2D)g;
-        g2.draw(shape);
+    protected void paint(Graphics2D g){
+        super.paint(g);
+        g.draw(shape);
+        g.setColor(fillColor);
+        g.fill(shape);
     }
 }

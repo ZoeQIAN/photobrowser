@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 /**
@@ -9,12 +10,16 @@ import java.util.ArrayList;
 public class RootNode extends Node {
 
     public RootNode(){
+        super();
         parent = null;
-        children = new ArrayList<>();
     }
     @Override
-    protected void paint(Graphics g){
+    protected void paint(Graphics2D g){
+        super.paint(g);
         for(Node n : children){
+            AffineTransform trns = g.getTransform();
+            trns.translate(n.getPos().getX(), n.getPos().getY());
+            g.setTransform(trns);
             n.paint(g);
         }
     }

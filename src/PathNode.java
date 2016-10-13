@@ -6,11 +6,18 @@ import java.awt.geom.GeneralPath;
  */
 public class PathNode extends Node {
     GeneralPath gPath;
-    public PathNode(GeneralPath gp){
-        gPath = gp;
+    public PathNode(){
+        super();
+        gPath = new GeneralPath();
+        gPath.moveTo(0,0);
     }
-    @Override
-    protected void paint(Graphics g){
+    public void addPoint(Point p){
+        gPath.lineTo(p.getX(), p.getY());
+    }
 
+    @Override
+    protected void paint(Graphics2D g){
+        super.paint(g);
+        g.draw(gPath);
     }
 }

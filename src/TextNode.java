@@ -8,11 +8,12 @@ public class TextNode extends Node {
 
     ArrayList<String> text;
     public TextNode(){
+        super();
         text = new ArrayList<>();
     }
 
     @Override
-    protected void paint(Graphics g){
-
+    protected void paint(Graphics2D g){
+        super.paint(g);
     }
 }
