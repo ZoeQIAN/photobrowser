@@ -11,6 +11,7 @@ public class ShapeNode extends Node {
     public ShapeNode(Shape s){
         super();
         shape = s;
+        bound = shape.getBounds();
     }
     public void setShape(Shape s){
         shape = s;
@@ -18,10 +19,11 @@ public class ShapeNode extends Node {
     @Override
     protected void paint(Graphics2D g){
         if(isVisible) {
-            super.paint(g);
+            g.setColor(strokeColor);
             g.draw(shape);
             g.setColor(fillColor);
             g.fill(shape);
+            super.paint(g);
         }
     }
 }

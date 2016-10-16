@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8102c204-f59e-4dcf-8172-5710b77fd605" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/PhotoComponent.class" afterPath="$PROJECT_DIR$/bin/PhotoComponent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContainerNode.java" afterPath="$PROJECT_DIR$/src/ContainerNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Node.java" afterPath="$PROJECT_DIR$/src/Node.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PathNode.java" afterPath="$PROJECT_DIR$/src/PathNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PhotoComponent.java" afterPath="$PROJECT_DIR$/src/PhotoComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RootNode.java" afterPath="$PROJECT_DIR$/src/RootNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SceneGraphDisplay.java" afterPath="$PROJECT_DIR$/src/SceneGraphDisplay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ShapeNode.java" afterPath="$PROJECT_DIR$/src/ShapeNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextNode.java" afterPath="$PROJECT_DIR$/src/TextNode.java" />
     </list>
@@ -33,33 +34,25 @@
       <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            <state relative-caret-position="345">
+              <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1136#1137#0" expanded="true" />
-                <element signature="e#1175#1176#0" expanded="true" />
-                <element signature="e#1324#1325#0" expanded="true" />
-                <element signature="e#1355#1356#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoComponent.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PhotoComponent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="202" column="88" selection-start-line="202" selection-start-column="58" selection-end-line="202" selection-end-column="88" />
+            <state relative-caret-position="183">
+              <caret line="178" column="21" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
-                <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
-                <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
-                <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
-                <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
                 <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
               </folding>
@@ -70,8 +63,8 @@
       <file leaf-file-name="ContainerNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ContainerNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            <state relative-caret-position="204">
+              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,12 +75,10 @@
       <file leaf-file-name="PathNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PathNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="306">
+              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#298#299#0" expanded="true" />
-                <element signature="e#346#347#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,28 +87,9 @@
       <file leaf-file-name="ShapeNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ShapeNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-              <folding>
-                <element signature="e#140#141#0" expanded="true" />
-                <element signature="e#163#164#0" expanded="true" />
-                <element signature="e#271#272#0" expanded="true" />
-                <element signature="e#296#297#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SceneGraphDisplay.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/SceneGraphDisplay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1785#1786#0" expanded="true" />
-                <element signature="e#1810#1811#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,8 +97,8 @@
       <file leaf-file-name="RootNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RootNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="340">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,8 +109,8 @@
       <file leaf-file-name="TextNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TextNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+            <state relative-caret-position="296">
+              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,12 +123,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-              <folding>
-                <element signature="e#145#146#0" expanded="true" />
-                <element signature="e#168#169#0" expanded="true" />
-                <element signature="e#222#223#0" expanded="true" />
-                <element signature="e#287#288#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -184,14 +151,14 @@
         <option value="$PROJECT_DIR$/src/SceneGrapheDisplay.java" />
         <option value="$PROJECT_DIR$/src/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/ImageNode.java" />
-        <option value="$PROJECT_DIR$/src/PhotoComponent.java" />
-        <option value="$PROJECT_DIR$/src/PathNode.java" />
-        <option value="$PROJECT_DIR$/src/ShapeNode.java" />
-        <option value="$PROJECT_DIR$/src/RootNode.java" />
+        <option value="$PROJECT_DIR$/src/SceneGraphDisplay.java" />
         <option value="$PROJECT_DIR$/src/ContainerNode.java" />
+        <option value="$PROJECT_DIR$/src/PathNode.java" />
+        <option value="$PROJECT_DIR$/src/RootNode.java" />
+        <option value="$PROJECT_DIR$/src/ShapeNode.java" />
         <option value="$PROJECT_DIR$/src/Node.java" />
         <option value="$PROJECT_DIR$/src/TextNode.java" />
-        <option value="$PROJECT_DIR$/src/SceneGraphDisplay.java" />
+        <option value="$PROJECT_DIR$/src/PhotoComponent.java" />
       </list>
     </option>
   </component>
@@ -241,6 +208,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -275,7 +243,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -284,7 +251,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="true" />
   </component>
-  <component name="RunManager" selected="Application.SceneGraph">
+  <component name="RunManager" selected="Application.MainWindow">
     <configuration default="false" name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="MainWindow" />
@@ -596,12 +563,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36653388" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33200532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -612,7 +580,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -643,10 +610,6 @@
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1324#1325#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -675,10 +638,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#194#195#0" expanded="false" />
-            <element signature="e#236#237#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -688,8 +648,6 @@
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -708,12 +666,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#145#146#0" expanded="true" />
-            <element signature="e#168#169#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -737,13 +690,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
           </folding>
@@ -756,10 +704,6 @@
           <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1324#1325#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -795,13 +739,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
           </folding>
@@ -814,10 +753,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1324#1325#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -853,13 +788,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
           </folding>
@@ -872,10 +802,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1324#1325#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -926,13 +852,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
           </folding>
@@ -959,13 +880,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
           </folding>
@@ -992,13 +908,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
           </folding>
@@ -1025,13 +936,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
             <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
           </folding>
@@ -1152,91 +1058,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SceneGraphDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1785#1786#0" expanded="true" />
+            <element signature="e#1810#1811#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ImageNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding>
-            <element signature="e#145#146#0" expanded="true" />
-            <element signature="e#168#169#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/PathNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state relative-caret-position="306">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1324#1325#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="202" column="88" selection-start-line="202" selection-start-column="58" selection-end-line="202" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseDragged#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseMoved#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#inBorder#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyTyped#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
-            <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ContainerNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PathNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ShapeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding>
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="e#163#164#0" expanded="true" />
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RootNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ShapeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1245,22 +1128,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TextNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        <state relative-caret-position="296">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SceneGraphDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        <state relative-caret-position="183">
+          <caret line="178" column="21" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1785#1786#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
+            <element signature="docComment;field#strokeSet#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#mousePressed#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#PhotoComponent#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#PhotoComponent#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -17,12 +17,6 @@ public class RootNode extends Node {
     protected void paint(Graphics2D g){
         if(isVisible) {
             super.paint(g);
-            for (Node n : children) {
-                AffineTransform trns = g.getTransform();
-                trns.translate(n.getPos().getX(), n.getPos().getY());
-                g.setTransform(trns);
-                n.paint(g);
-            }
         }
     }
 

@@ -11,12 +11,6 @@ public class ContainerNode extends Node{
     protected void paint(Graphics2D g){
         if(isVisible) {
             super.paint(g);
-            for (Node nn : children) {
-                AffineTransform trns = g.getTransform();
-                trns.translate(nn.getPos().getX(), nn.getPos().getY());
-                g.setTransform(trns);
-                nn.paint(g);
-            }
         }
     }
 

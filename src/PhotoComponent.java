@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.xml.soap.Text;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -28,6 +29,7 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
         isTyping = false;
         textSet = new ArrayList<>();
         textPos = new ArrayList<>();
+
     }
 
 
@@ -39,9 +41,15 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
     private ArrayList<Point> linePnts;
     private int upperBorder, downBorder, leftBorder, rightBorder;
     private boolean drawing;
+    private RootNode graphicsRoot;
+    private ShapeNode back;
+    private TextNode text;
 
     public void mouseDragged(MouseEvent e){
-        System.out.println("[Debug] Dragged");
+        if(text!=null){
+            text.setEditing(false);
+            text = null;
+        }
         Point p = e.getPoint();
         if(isFlipped && drawing && inBorder(p)){
             linePnts.add(p);
@@ -54,38 +62,39 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
     }
 
     public void mouseClicked(MouseEvent e){
-        System.out.println("[Debug] Clicked");
         if(e.getClickCount()==2){
             isFlipped = !isFlipped;
             isTyping = false;
+            if(graphicsRoot == null){
+                graphicsRoot = new RootNode();
+                back = new ShapeNode(new Rectangle(photo.getWidth(),photo.getHeight()));
+                back.setColor(Color.black, Color.white);
+                graphicsRoot.addChild(back);
+            }
+            back.setPos(pos);
         }
-        else if(e.getClickCount() ==1){
-            if(texts!=null && isTyping && !texts.isEmpty()){
-                textSet.add(texts);
-                textPos.add(pos);
+        else if(e.getClickCount() ==1 && isFlipped){
+            if(text != null && isTyping){
+                text.setEditing(false);
+                text = null;
             }
             isTyping = true;
-            lineLen = 0;
-            texts = new ArrayList<>();
-            texts.add("");
-            pos = e.getPoint();
-            word="";
-            System.out.println("[Debug] Typing mode");
+            text = new TextNode(new Point(e.getX()-back.getPos().x, e.getY()-back.getPos().y));
+            text.setEditing(true);
+            back.addChild(text);
             requestFocusInWindow();
         }
         repaint();
     }
 
     public void mouseExited(MouseEvent e){
-        System.out.println("[Debug] Exited");
     }
 
     public void mouseEntered(MouseEvent e){
-        System.out.println("[Debug] Entered");
     }
 
     public void mouseReleased(MouseEvent e){
-        System.out.println("[Debug] Released");
+        System.out.println("[] Released");
         drawing = false;
     }
 
@@ -94,7 +103,6 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
     }
 
     public void mousePressed(MouseEvent e){
-        System.out.println("[Debug] Pressed");
         Point p = e.getPoint();
         if(isFlipped && inBorder(p)){
             drawing = true;
@@ -118,12 +126,7 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
     private final int fontSize = 20;
     public void keyTyped(KeyEvent e){
         if(isTyping){
-            if(e.getKeyChar()==' '){
-                texts.add("");
-            }
-            else{
-                texts.set(texts.size()-1,texts.get(texts.size()-1)+e.getKeyChar());
-            }
+            text.addChar(e.getKeyChar());
             repaint();
 
         }
@@ -152,76 +155,24 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
         downBorder = getHeight()/2+photo.getHeight()/2;
         //then load the photo
         if(isLoaded){
-
+            pos = new Point(getWidth()/2-photo.getWidth()/2,getHeight()/2-photo.getHeight()/2);
             if(isFlipped){
-                g.setColor(Color.white);
-                g.fillRect(getWidth()/2-photo.getWidth()/2,getHeight()/2-photo.getHeight()/2,photo.getWidth(),photo.getHeight());
-                g.setColor(Color.black);
-
-                // freehand strokes
-                for(ArrayList<Point> l : strokeSet){
-                    for(int i=0; i<l.size()-1; i++){
-                        g.drawLine(l.get(i).x, l.get(i).y, l.get(i+1).x,l.get(i+1).y);
-                    }
-                }
-
-
-                // render text
-                for(int i =0; i<textSet.size(); i++){
-                    renderText(textSet.get(i),g, textPos.get(i));
-                }
-                renderText(texts,g,pos);
-
-
+                back.setPos(pos);
+                graphicsRoot.paint(g);
             }
             else{
-                g.drawImage(photo,getWidth()/2-photo.getWidth()/2,getHeight()/2-photo.getHeight()/2,this);
+                g.drawImage(photo,pos.x,pos.y,null);
             }
 
         }
 
-    }
-
-    private void renderText(ArrayList<String> t, Graphics2D g, Point pos){
-        g.setFont(new Font("New Times Roman",Font.PLAIN,fontSize));
-        String line = "";
-        int lineNum = 0;
-        for(String w : t){
-            if(g.getFontMetrics().stringWidth(line+w)+pos.x > rightBorder){
-                if(!line.isEmpty()) {
-                    g.drawString(line, pos.x, pos.y + lineNum * g.getFontMetrics().getHeight());
-                    lineNum+=1;
-                }
-                while(pos.x+g.getFontMetrics().stringWidth(w)>rightBorder){
-                    for(int i=1; i<=w.length();i++){
-                        if(pos.x+g.getFontMetrics().stringWidth(w.substring(0,i))>rightBorder){
-                            line = w.substring(0,i-1);
-                            w = w.substring(i-1);
-                            break;
-                        }
-                    }
-                    g.drawString(line,pos.x,pos.y+lineNum*g.getFontMetrics().getHeight());
-                    lineNum +=1;
-                }
-                line = w+' ';
-
-            }
-            else{
-                line+=w+' ';
-            }
-        }
-        if(!line.isEmpty()){
-            g.drawString(line,pos.x,pos.y+lineNum*g.getFontMetrics().getHeight());
-        }
     }
 
     public void loadPhoto(String file){
         try{
             photo = ImageIO.read(new File(file));
         }catch(IOException e){
-            System.out.println("[Debug] Cannot open file "+file);
         }
-        System.out.println("[Debug] photo loaded");
         isLoaded = true;
         setSize(new Dimension(photo.getWidth(),photo.getHeight()));
         setPreferredSize(new Dimension(photo.getWidth(),photo.getHeight()));

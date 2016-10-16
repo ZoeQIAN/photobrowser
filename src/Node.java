@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 /**
@@ -59,7 +60,17 @@ public abstract class Node {
     }
 
     protected void paint(Graphics2D g){
-        g.setColor(strokeColor);
+        if(isVisible){
+            for (Node nn : children) {
+                AffineTransform trns = g.getTransform();
+                AffineTransform trns_backup = new AffineTransform(g.getTransform());
+                trns.translate(nn.getPos().getX(), nn.getPos().getY());
+                g.setTransform(trns);
+                nn.paint(g);
+                g.setTransform(trns_backup);
+            }
+        }
+
     };
 
     public int getWidth(){
@@ -84,6 +95,11 @@ public abstract class Node {
 
     public void setBound(Rectangle r){
         bound = r;
+    }
+
+    public void setColor(Color strokeC, Color fillC){
+        strokeColor = strokeC;
+        fillColor = fillC;
     }
 
 
