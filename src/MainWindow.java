@@ -97,6 +97,7 @@ public class MainWindow extends JFrame{
 		tBtn.addActionListener(event->categoryChosen(event));
 		toolBar.add(tBtn);
 	}
+
 	private void initPhotoComp(){
         photo = new PhotoComponent();
         photoScrPane = new JScrollPane(photo);

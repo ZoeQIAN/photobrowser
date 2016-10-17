@@ -6,15 +6,25 @@ import java.awt.geom.GeneralPath;
  */
 public class PathNode extends Node {
     GeneralPath gPath;
+    private boolean empty;
     public PathNode(){
         super();
         gPath = new GeneralPath();
-        gPath.moveTo(0,0);
+        empty = true;
     }
     public void addPoint(Point p){
-        gPath.lineTo(p.getX(), p.getY());
+        if(empty){
+            gPath.moveTo(p.x,p.y);
+        }
+        else {
+            gPath.lineTo(p.getX(), p.getY());
+        }
+        empty = false;
     }
 
+    public boolean isEmpty(){
+        return empty;
+    }
     @Override
     protected void paint(Graphics2D g){
         if(isVisible) {

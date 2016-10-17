@@ -16,9 +16,14 @@ public class ShapeNode extends Node {
     public void setShape(Shape s){
         shape = s;
     }
+    public Shape getShape(){
+        return shape;
+    }
     @Override
     protected void paint(Graphics2D g){
+
         if(isVisible) {
+            System.out.println("Drawing shape :"+ shape.toString());
             g.setColor(strokeColor);
             g.draw(shape);
             g.setColor(fillColor);

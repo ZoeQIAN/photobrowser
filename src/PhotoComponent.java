@@ -3,6 +3,8 @@ import javax.swing.*;
 import javax.xml.soap.Text;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +13,32 @@ import java.util.ArrayList;
 /**
  * Created by zqian on 20/09/2016.
  */
-public class PhotoComponent extends JComponent implements MouseListener, MouseMotionListener, KeyListener {
+public class PhotoComponent extends JPanel implements MouseListener, MouseMotionListener, KeyListener {
+
+
+    private boolean isTyping;
+    private Point pos;
+
+    // to choose the shape for annotations
+    private JToolBar shapeChooser;
+    /**
+     *  freehand strokes related functions
+     *  mouse listeners
+     */
+    private ArrayList<ArrayList<Point>> strokeSet;
+    private ArrayList<Point> linePnts;
+    private int upperBorder, downBorder, leftBorder, rightBorder;
+    private boolean drawing;
+    private RootNode graphicsRoot;      // the root node for the flipped part
+    private ShapeNode back;     // for display the blank background of the flipped side
+    private TextNode text;      // The now-editing text node
+    private ShapeNode shape;
+    private PathNode path;
+
+    final static String ELLIPSE = "Ellipse";
+    final static String LINE = "Line";
+    final static String RECTANGLE = "Rectangle";
+    final static String PATH = "Path";
 
     public PhotoComponent() {
         setSize(new Dimension(200,300));
@@ -22,28 +49,79 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
         addMouseListener(this);
         addMouseMotionListener(this);
         strokeSet = new ArrayList<>();
-
         setFocusable(true);
 
         addKeyListener(this);
         isTyping = false;
-        textSet = new ArrayList<>();
-        textPos = new ArrayList<>();
 
+
+        initShapeChooser();
     }
 
+    private void initShapeChooser(){
+        shapeChooser = new JToolBar();
+        add(shapeChooser,BorderLayout.NORTH);
+        shapeChooser.setVisible(false);
 
-    /**
-     *  freehand strokes related functions
-     *  mouse listeners
-     */
-    private ArrayList<ArrayList<Point>> strokeSet;
-    private ArrayList<Point> linePnts;
-    private int upperBorder, downBorder, leftBorder, rightBorder;
-    private boolean drawing;
-    private RootNode graphicsRoot;
-    private ShapeNode back;
-    private TextNode text;
+        JToggleButton ellipse = new JToggleButton("Ellipse");
+        ellipse.setActionCommand(ELLIPSE);
+        ellipse.addActionListener(event->shapeChosen(event));
+        shapeChooser.add(ellipse);
+
+        JToggleButton rect = new JToggleButton("Rectangle");
+        rect.setActionCommand(RECTANGLE);
+        rect.addActionListener(event->shapeChosen(event));
+        shapeChooser.add(rect);
+
+        JToggleButton line = new JToggleButton("Line");
+        line.setActionCommand(LINE);
+        line.addActionListener(event->shapeChosen(event));
+        shapeChooser.add(line);
+
+        JToggleButton path = new JToggleButton("Path");
+        path.setActionCommand(PATH);
+        path.addActionListener(event->shapeChosen(event));
+        shapeChooser.add(path);
+
+        ButtonGroup shapeGroup = new ButtonGroup();
+        shapeGroup.add(ellipse);
+        shapeGroup.add(rect);
+        shapeGroup.add(line);
+        shapeGroup.add(path);
+
+        shapeGroup.setSelected(line.getModel(),true);
+    }
+
+    private void shapeChosen(ActionEvent e){
+        System.out.println("Shape chosen");
+        chosenShape = e.getActionCommand();
+    }
+
+    Point pressedPoint;
+    String chosenShape;
+    private void updateShape(Point p){
+        int x = pressedPoint.x-pos.x;
+        int y = pressedPoint.y-pos.y;
+        int w = p.x - pressedPoint.x;
+        int h = p.y - pressedPoint.y;
+        switch (chosenShape){
+            case ELLIPSE:
+                shape.setShape(new Ellipse2D.Float(x,y,w,h));
+                break;
+            case RECTANGLE:
+                shape.setShape(new Rectangle(x,y,w,h));
+                break;
+            case LINE:
+                shape.setShape(new Line2D.Float(x,y,x+w,y+h));
+                break;
+            case PATH:
+                path.addPoint(new Point(p.x-pos.x, p.y-pos.y));
+                break;
+            default:
+                break;
+        }
+    }
+
 
     public void mouseDragged(MouseEvent e){
         if(text!=null){
@@ -51,8 +129,8 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
             text = null;
         }
         Point p = e.getPoint();
-        if(isFlipped && drawing && inBorder(p)){
-            linePnts.add(p);
+        if(isFlipped && inBorder(p)){
+            updateShape(e.getPoint());
         }
         repaint();
     }
@@ -64,6 +142,13 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
     public void mouseClicked(MouseEvent e){
         if(e.getClickCount()==2){
             isFlipped = !isFlipped;
+            if(isFlipped){
+                shapeChooser.setVisible(true);
+                chosenShape = LINE;
+            }
+            else{
+                shapeChooser.setVisible(false);
+            }
             isTyping = false;
             if(graphicsRoot == null){
                 graphicsRoot = new RootNode();
@@ -94,8 +179,14 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
     }
 
     public void mouseReleased(MouseEvent e){
-        System.out.println("[] Released");
         drawing = false;
+        if(shape != null && shape.getShape()==null){
+            back.removeChild(shape);
+        }
+        if(path != null && path.isEmpty()){
+            back.removeChild(path);
+        }
+        repaint();
     }
 
     private boolean inBorder(Point p){
@@ -105,25 +196,25 @@ public class PhotoComponent extends JComponent implements MouseListener, MouseMo
     public void mousePressed(MouseEvent e){
         Point p = e.getPoint();
         if(isFlipped && inBorder(p)){
-            drawing = true;
-            linePnts = new ArrayList<>();
-            linePnts.add(p);
-            strokeSet.add(linePnts);
+            pressedPoint = e.getPoint();
+            if(chosenShape == PATH){
+                path = new PathNode();
+                back.addChild(path);
+            }
+            else {
+                shape = new ShapeNode();
+                shape.setColor(Color.black, Color.white);
+                back.addChild(shape);
+            }
         }
+        repaint();
     }
 
 
     /**
      * Key listeners
      */
-    private boolean isTyping;
-    private ArrayList<String> texts;
-    private ArrayList< ArrayList <String> > textSet;
-    private String word;
-    private int lineLen;
-    private Point pos;
-    private ArrayList<Point> textPos;
-    private final int fontSize = 20;
+
     public void keyTyped(KeyEvent e){
         if(isTyping){
             text.addChar(e.getKeyChar());
