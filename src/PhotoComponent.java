@@ -102,8 +102,16 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
     private void updateShape(Point p){
         int x = pressedPoint.x-pos.x;
         int y = pressedPoint.y-pos.y;
+        int x2 = p.x - pos.x;
+        int y2 = p.y - pos.y;
         int w = p.x - pressedPoint.x;
         int h = p.y - pressedPoint.y;
+        w = w<0?-w:w;
+        h = h<0?-h:h;
+
+        x = Math.min(x,x2);
+        y = Math.min(y,y2);
+
         switch (chosenShape){
             case ELLIPSE:
                 shape.setShape(new Ellipse2D.Float(x,y,w,h));

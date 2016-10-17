@@ -23,7 +23,6 @@ public class ShapeNode extends Node {
     protected void paint(Graphics2D g){
 
         if(isVisible) {
-            System.out.println("Drawing shape :"+ shape.toString());
             g.setColor(strokeColor);
             g.draw(shape);
             g.setColor(fillColor);
