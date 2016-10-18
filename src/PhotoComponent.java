@@ -109,18 +109,18 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         w = w<0?-w:w;
         h = h<0?-h:h;
 
-        x = Math.min(x,x2);
-        y = Math.min(y,y2);
+        int xx = Math.min(x,x2);
+        int yy = Math.min(y,y2);
 
         switch (chosenShape){
             case ELLIPSE:
-                shape.setShape(new Ellipse2D.Float(x,y,w,h));
+                shape.setShape(new Ellipse2D.Float(xx,yy,w,h));
                 break;
             case RECTANGLE:
-                shape.setShape(new Rectangle(x,y,w,h));
+                shape.setShape(new Rectangle(xx,yy,w,h));
                 break;
             case LINE:
-                shape.setShape(new Line2D.Float(x,y,x+w,y+h));
+                shape.setShape(new Line2D.Float(x,y,x2,y2));
                 break;
             case PATH:
                 path.addPoint(new Point(p.x-pos.x, p.y-pos.y));
@@ -166,7 +166,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
             }
             back.setPos(pos);
         }
-        else if(e.getClickCount() ==1 && isFlipped){
+        else if(e.getClickCount() ==1 && isFlipped && inBorder(e.getPoint())){
             if(text != null && isTyping){
                 text.setEditing(false);
                 text = null;
@@ -203,6 +203,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
 
     public void mousePressed(MouseEvent e){
         Point p = e.getPoint();
+
         if(isFlipped && inBorder(p)){
             pressedPoint = e.getPoint();
             if(chosenShape == PATH){
@@ -214,7 +215,9 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
                 shape.setColor(Color.black, Color.white);
                 back.addChild(shape);
             }
+            updateShape(p);
         }
+
         repaint();
     }
 

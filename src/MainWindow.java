@@ -1,6 +1,8 @@
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyListener;
+import java.io.File;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
@@ -24,6 +26,9 @@ public class MainWindow extends JFrame{
 	private JLabel statusBar;
 	private JScrollPane photoScrPane;
 	private PhotoComponent photo;
+	private int photoIdx;
+
+	private ArrayList<PhotoComponent> photoSet;
 
 	static final private String FAMILY = "Family";
 	static final private String VACATION = "Vacation";
@@ -82,22 +87,53 @@ public class MainWindow extends JFrame{
 		JToolBar toolBar = new JToolBar();
 		add(toolBar,BorderLayout.PAGE_START);
 
+		ButtonGroup labelGroup = new ButtonGroup();
+
 		JToggleButton tBtn = new JToggleButton(FAMILY);
 		tBtn.setActionCommand(FAMILY);
 		tBtn.addActionListener(event->categoryChosen(event));
 		toolBar.add(tBtn);
+		labelGroup.add(tBtn);
 
 		tBtn = new JToggleButton(VACATION);
 		tBtn.setActionCommand(VACATION);
 		tBtn.addActionListener(event->categoryChosen(event));
 		toolBar.add(tBtn);
+		labelGroup.add(tBtn);
 
 		tBtn = new JToggleButton(SCHOOL);
 		tBtn.setActionCommand(SCHOOL);
 		tBtn.addActionListener(event->categoryChosen(event));
 		toolBar.add(tBtn);
-	}
+		labelGroup.add(tBtn);
 
+		// add next/previous button
+		toolBar.addSeparator();
+		JButton previousBtn = new JButton("Previous");
+		previousBtn.addActionListener(event->switchPhoto(false));
+		toolBar.add(previousBtn);
+
+		JButton nextBtn = new JButton("Next");
+		nextBtn.addActionListener(event->switchPhoto(true));
+		toolBar.add(nextBtn);
+
+
+	}
+	private void switchPhoto(boolean next){
+		if(next){
+			photoIdx+=1;
+		}
+		else{
+			photoIdx-=1;
+		}
+		if(photoIdx == photoSet.size()){
+			photoIdx = 0;
+		}
+		else if(photoIdx == -1){
+			photoIdx = photoSet.size()-1;
+		}
+		setDisplayPhoto(photoSet.get(photoIdx));
+	}
 	private void initPhotoComp(){
         photo = new PhotoComponent();
         photoScrPane = new JScrollPane(photo);
@@ -112,27 +148,44 @@ public class MainWindow extends JFrame{
 		initStatusBar();
 		initToolBar();
 		//initPhotoComp();
+		photoScrPane = new JScrollPane(photo);
+		add(photoScrPane, BorderLayout.CENTER);
+		photoSet = new ArrayList<>();
 
 		// window size
 		setPreferredSize(new Dimension(600,400));
 		pack();
 	}
-	
+
+	private void setDisplayPhoto(PhotoComponent p){
+		if(photo != null){
+			removeMouseListener(photo);
+			removeMouseMotionListener(photo);
+		}
+		photo = p;
+		addMouseListener(photo);
+		addMouseMotionListener(photo);
+		photoScrPane.setViewportView(photo);
+		repaint();
+	}
+
 	private void importFile(){
 		JFileChooser fileChooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF images","jpg","gif");
 		fileChooser.setFileFilter(filter);
+		fileChooser.setMultiSelectionEnabled(true);
 		int returnVal = fileChooser.showOpenDialog(this);
 	    if(returnVal == JFileChooser.APPROVE_OPTION) {
-			String file = fileChooser.getSelectedFile().getPath();
-	        updateStatus("Open file: " + file);
+			File[] files = fileChooser.getSelectedFiles();
+	        updateStatus("Open file");
 
-            photo=new PhotoComponent();
-			photoScrPane = new JScrollPane(photo);
-            photo.loadPhoto(file);
-            add(photoScrPane,BorderLayout.CENTER);
-            addMouseListener(photo);
-			addMouseMotionListener(photo);
+			for(File f:files) {
+				photo = new PhotoComponent();
+				photo.loadPhoto(f.getPath());
+				photoSet.add(photo);
+			}
+			setDisplayPhoto(photoSet.get(0));
+
 	     }
 	}
 	
@@ -150,8 +203,8 @@ public class MainWindow extends JFrame{
 	
 	private void deletePhoto(){
 		updateStatus("Delete");
+		photoSet.remove(photo);
 		photoScrPane.remove(photo);
-		remove(photoScrPane);
 		photo = null;
 		repaint();
 	}
