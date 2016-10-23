@@ -25,8 +25,6 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
      *  freehand strokes related functions
      *  mouse listeners
      */
-    private ArrayList<ArrayList<Point>> strokeSet;
-    private ArrayList<Point> linePnts;
     private int upperBorder, downBorder, leftBorder, rightBorder;
     private boolean drawing;
     private RootNode graphicsRoot;      // the root node for the flipped part
@@ -48,7 +46,6 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         drawing = false;
         addMouseListener(this);
         addMouseMotionListener(this);
-        strokeSet = new ArrayList<>();
         setFocusable(true);
 
         addKeyListener(this);

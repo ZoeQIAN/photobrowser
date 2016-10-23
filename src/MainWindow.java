@@ -151,6 +151,7 @@ public class MainWindow extends JFrame{
 		photoScrPane = new JScrollPane(photo);
 		add(photoScrPane, BorderLayout.CENTER);
 		photoSet = new ArrayList<>();
+		photoIdx = 0;
 
 		// window size
 		setPreferredSize(new Dimension(600,400));
@@ -205,7 +206,15 @@ public class MainWindow extends JFrame{
 		updateStatus("Delete");
 		photoSet.remove(photo);
 		photoScrPane.remove(photo);
-		photo = null;
+		if(photoIdx>=photoSet.size()){
+			photoIdx = 0;
+		}
+		if(photoSet.isEmpty()){
+			setDisplayPhoto(null);
+		}
+		else {
+			setDisplayPhoto(photoSet.get(photoIdx));
+		}
 		repaint();
 	}
 	
