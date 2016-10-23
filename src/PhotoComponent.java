@@ -18,7 +18,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
 
     private boolean isTyping;
     private Point pos;
-
+    private final int minW = 100;
     // to choose the shape for annotations
     private JToolBar shapeChooser;
     /**
@@ -248,19 +248,51 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         //drawing a background
         g.setColor(Color.lightGray);
         g.fillRect(0,0,getWidth(),getHeight());
-        leftBorder = getWidth()/2-photo.getWidth()/2;
-        rightBorder = getWidth()/2+photo.getWidth()/2;
-        upperBorder = getHeight()/2-photo.getHeight()/2;
-        downBorder = getHeight()/2+photo.getHeight()/2;
+//        if(getParent().getWidth() > 100 && getParent().getHeight() >100) {
+//            setSize(getParent().getSize());
+//        }
+//        else{
+//            setSize(new Dimension(100,100));
+//        }
         //then load the photo
         if(isLoaded){
-            pos = new Point(getWidth()/2-photo.getWidth()/2,getHeight()/2-photo.getHeight()/2);
+
+
+            float rImg;
+            int newW = photo.getWidth();
+            int newH = photo.getHeight();
+            rImg = photo.getWidth()/photo.getHeight();
+            pos = new Point();
+            if(getWidth()>photo.getWidth() && getHeight()>photo.getHeight()){
+                pos.x = getWidth()/2-photo.getWidth()/2;
+                pos.y = getHeight()/2-photo.getHeight()/2;
+            }
+            else if(photo.getHeight() >= getHeight()){
+                newH = getHeight();
+                newW = (int)(newH*rImg);
+                pos.y = 0;
+                pos.x = getWidth()/2 - newW/2;
+            }
+            else{
+                newW = getWidth();
+                newH = (int)(newW/rImg);
+                pos.x = 0;
+                pos.y = getHeight()/2 - newH/2;
+            }
+
+            leftBorder = pos.x;
+            rightBorder = getWidth()-pos.x;
+            upperBorder = pos.y;
+            downBorder = getHeight()-pos.y;
+
+            pos.x = Math.max(pos.x,0);
+            pos.y = Math.max(pos.y,0);
             if(isFlipped){
                 back.setPos(pos);
                 graphicsRoot.paint(g);
             }
             else{
-                g.drawImage(photo,pos.x,pos.y,null);
+                g.drawImage(photo, pos.x,pos.y, newW, newH, null);
             }
 
         }
@@ -274,7 +306,8 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         }
         isLoaded = true;
         setSize(new Dimension(photo.getWidth(),photo.getHeight()));
-        setPreferredSize(new Dimension(photo.getWidth(),photo.getHeight()));
+        setMinimumSize(new Dimension(photo.getWidth()/3, photo.getHeight()/3));
+//        setPreferredSize(new Dimension(photo.getWidth(),photo.getHeight()));
         revalidate();
     }
 

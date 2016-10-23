@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyListener;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -17,7 +16,6 @@ public class MainWindow extends JFrame{
 	public static void main(String args[]){
 		MainWindow win = new MainWindow();
 		win.setVisible(true);
-
 	}
 	
 	private JMenuBar menuBar;
@@ -27,6 +25,8 @@ public class MainWindow extends JFrame{
 	private JScrollPane photoScrPane;
 	private PhotoComponent photo;
 	private int photoIdx;
+	private JPanel bPhotoPanel;
+	private JPanel sPhotoPanel;
 
 	private ArrayList<PhotoComponent> photoSet;
 
@@ -147,7 +147,8 @@ public class MainWindow extends JFrame{
 		initMenuBar();
 		initStatusBar();
 		initToolBar();
-		//initPhotoComp();
+
+
 		photoScrPane = new JScrollPane(photo);
 		add(photoScrPane, BorderLayout.CENTER);
 		photoSet = new ArrayList<>();
@@ -168,6 +169,15 @@ public class MainWindow extends JFrame{
 		addMouseMotionListener(photo);
 		photoScrPane.setViewportView(photo);
 		repaint();
+	}
+
+	private void setDisplayPhoto(int idx){
+		if(idx >= photoSet.size()){
+			setDisplayPhoto(null);
+		}
+		else{
+			setDisplayPhoto(photoSet.get(photoIdx));
+		}
 	}
 
 	private void importFile(){
@@ -226,14 +236,46 @@ public class MainWindow extends JFrame{
 	
 	private void photoViewer(){
 		updateStatus("Photo viewer");
+//		getContentPane().removeAll();
+		setDisplayPhoto(photoIdx);
 	}
 	
 	private void browser(){
 		updateStatus("Browser");
+		if(bPhotoPanel == null) {
+			int rowNum = photoSet.size() / 4;
+			GridLayout browserLayout = new GridLayout(rowNum > 3 ? rowNum : 3, 4);
+			bPhotoPanel = new JPanel();
+			bPhotoPanel.setLayout(browserLayout);
+			for (PhotoComponent p : photoSet) {
+				bPhotoPanel.add(p);
+			}
+			bPhotoPanel.setMaximumSize(new Dimension(getWidth(), bPhotoPanel.getHeight()));
+		}
+//		photoScrPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		photoScrPane.setViewportView(bPhotoPanel);
+		repaint();
 	}
 	
 	private void splitMode(){
 		updateStatus("Split Mode");
+		if(sPhotoPanel == null){
+			sPhotoPanel = new JPanel();
+			sPhotoPanel.setLayout(new BoxLayout(sPhotoPanel, BoxLayout.LINE_AXIS));
+
+		}
+		else{
+			sPhotoPanel.removeAll();
+		}
+
+		int prev, next;
+		prev = photoIdx-1<0?photoSet.size()-1:photoIdx-1;
+		next = photoIdx+1>=photoSet.size()?0:photoIdx+1;
+		sPhotoPanel.add(photoSet.get(prev));
+		sPhotoPanel.add(photoSet.get(photoIdx));
+		sPhotoPanel.add(photoSet.get(next));
+		photoScrPane.setViewportView(sPhotoPanel);
+		repaint();
 	}
 	
 	private void categoryChosen(ActionEvent e){
