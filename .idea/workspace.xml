@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8102c204-f59e-4dcf-8172-5710b77fd605" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainWindow.java" afterPath="$PROJECT_DIR$/src/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PhotoComponent.java" afterPath="$PROJECT_DIR$/src/PhotoComponent.java" />
     </list>
     <ignored path="PhotoBrowser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,24 +36,20 @@
       <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="250" column="26" selection-start-line="250" selection-start-column="26" selection-end-line="250" selection-end-column="26" />
+            <state relative-caret-position="226">
+              <caret line="291" column="0" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
                 <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
                 <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
               </folding>
             </state>
@@ -691,17 +686,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -757,17 +748,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -823,17 +810,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -880,17 +863,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -905,17 +884,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -930,17 +905,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -979,17 +950,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1028,17 +995,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1077,17 +1040,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1126,17 +1085,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1151,17 +1106,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1176,17 +1127,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1201,17 +1148,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1226,17 +1169,13 @@
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1379,24 +1318,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="250" column="26" selection-start-line="250" selection-start-column="26" selection-end-line="250" selection-end-column="26" />
+        <state relative-caret-position="226">
+          <caret line="291" column="0" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initMenuBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initStatusBar#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initToolBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#switchPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#initPhotoComp#0;class#MainWindow#0" expanded="false" />
             <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setDisplayPhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setDisplayPhoto#1;class#MainWindow#0" expanded="false" />
             <element signature="method#importFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateStatus#1;class#MainWindow#0" expanded="false" />
             <element signature="method#deletePhoto#0;class#MainWindow#0" expanded="false" />
             <element signature="method#quitApp#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#photoViewer#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browser#0;class#MainWindow#0" expanded="false" />
             <element signature="method#categoryChosen#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>

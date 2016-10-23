@@ -21,6 +21,8 @@ public class MainWindow extends JFrame{
 		VIEWER
 	}
 
+	viewMode mode;
+
 	public static void main(String args[]){
 		MainWindow win = new MainWindow();
 		win.setVisible(true);
@@ -162,6 +164,8 @@ public class MainWindow extends JFrame{
 		photoSet = new ArrayList<>();
 		photoIdx = 0;
 
+		mode = viewMode.VIEWER;
+
 		// window size
 		setPreferredSize(new Dimension(600,400));
 		pack();
@@ -172,10 +176,36 @@ public class MainWindow extends JFrame{
 			removeMouseListener(photo);
 			removeMouseMotionListener(photo);
 		}
-		photo = p;
-		addMouseListener(photo);
-		addMouseMotionListener(photo);
-		photoScrPane.setViewportView(photo);
+		if(mode == viewMode.VIEWER) {
+			photo = p;
+			addMouseListener(photo);
+			addMouseMotionListener(photo);
+			photoScrPane.setViewportView(photo);
+		}
+		else if(mode == viewMode.SPLIT){
+			if(sPhotoPanel == null){
+				sPhotoPanel = new JPanel();
+				sPhotoPanel.setLayout(new BoxLayout(sPhotoPanel, BoxLayout.LINE_AXIS));
+
+			}
+			else{
+				sPhotoPanel.removeAll();
+				sPhotoPanel.revalidate();
+				sPhotoPanel.repaint();
+			}
+			int prev, next;
+			prev = photoIdx-1<0?photoSet.size()-1:photoIdx-1;
+			next = photoIdx+1>=photoSet.size()?0:photoIdx+1;
+			photo = p;
+
+			photoSet.get(photoIdx).setPreferredSize(new Dimension(getWidth()/2, getHeight()));
+			photoSet.get(prev).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
+			photoSet.get(next).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
+			sPhotoPanel.add(photoSet.get(prev));
+			sPhotoPanel.add(photoSet.get(photoIdx));
+			sPhotoPanel.add(photoSet.get(next));
+			photoScrPane.setViewportView(sPhotoPanel);
+		}
 		repaint();
 	}
 
@@ -245,46 +275,36 @@ public class MainWindow extends JFrame{
 	private void photoViewer(){
 		updateStatus("Photo viewer");
 //		getContentPane().removeAll();
+		mode = viewMode.VIEWER;
 		setDisplayPhoto(photoIdx);
 	}
 	
 	private void browser(){
 		updateStatus("Browser");
+		mode = viewMode.BROWSER;
 		if(bPhotoPanel == null) {
 			int rowNum = photoSet.size() / 4;
-			GridLayout browserLayout = new GridLayout(rowNum > 3 ? rowNum : 3, 4);
 			bPhotoPanel = new JPanel();
-			bPhotoPanel.setLayout(browserLayout);
+			bPhotoPanel.setLayout(new GridLayout(rowNum>3?rowNum:3,4));
+		}
+
+
+
 			for (PhotoComponent p : photoSet) {
+				p.setPreferredSize(new Dimension(200,200));
 				bPhotoPanel.add(p);
 			}
 			bPhotoPanel.setMaximumSize(new Dimension(getWidth(), bPhotoPanel.getHeight()));
-		}
+//		}
 		photoScrPane.setViewportView(bPhotoPanel);
 		repaint();
 	}
 	
 	private void splitMode(){
 		updateStatus("Split Mode");
-		if(sPhotoPanel == null){
-			sPhotoPanel = new JPanel();
-			sPhotoPanel.setLayout(new BoxLayout(sPhotoPanel, BoxLayout.LINE_AXIS));
 
-		}
-		else{
-			sPhotoPanel.removeAll();
-		}
-
-		int prev, next;
-		prev = photoIdx-1<0?photoSet.size()-1:photoIdx-1;
-		next = photoIdx+1>=photoSet.size()?0:photoIdx+1;
-		photoSet.get(photoIdx).setPreferredSize(new Dimension(getWidth()/2, getHeight()));
-		photoSet.get(prev).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
-		photoSet.get(next).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
-		sPhotoPanel.add(photoSet.get(prev));
-		sPhotoPanel.add(photoSet.get(photoIdx));
-		sPhotoPanel.add(photoSet.get(next));
-		photoScrPane.setViewportView(sPhotoPanel);
+		mode = viewMode.SPLIT;
+		setDisplayPhoto(photoIdx);
 		repaint();
 	}
 	
