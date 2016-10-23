@@ -13,6 +13,14 @@ public class MainWindow extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 
+
+
+	private enum viewMode{
+		BROWSER,
+		SPLIT,
+		VIEWER
+	}
+
 	public static void main(String args[]){
 		MainWindow win = new MainWindow();
 		win.setVisible(true);
@@ -252,7 +260,6 @@ public class MainWindow extends JFrame{
 			}
 			bPhotoPanel.setMaximumSize(new Dimension(getWidth(), bPhotoPanel.getHeight()));
 		}
-//		photoScrPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		photoScrPane.setViewportView(bPhotoPanel);
 		repaint();
 	}
@@ -271,6 +278,9 @@ public class MainWindow extends JFrame{
 		int prev, next;
 		prev = photoIdx-1<0?photoSet.size()-1:photoIdx-1;
 		next = photoIdx+1>=photoSet.size()?0:photoIdx+1;
+		photoSet.get(photoIdx).setPreferredSize(new Dimension(getWidth()/2, getHeight()));
+		photoSet.get(prev).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
+		photoSet.get(next).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
 		sPhotoPanel.add(photoSet.get(prev));
 		sPhotoPanel.add(photoSet.get(photoIdx));
 		sPhotoPanel.add(photoSet.get(next));
@@ -290,5 +300,7 @@ public class MainWindow extends JFrame{
 			}
 		}
 	}
+
+
 	
 }

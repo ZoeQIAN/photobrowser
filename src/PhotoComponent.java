@@ -248,26 +248,34 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         //drawing a background
         g.setColor(Color.lightGray);
         g.fillRect(0,0,getWidth(),getHeight());
-//        if(getParent().getWidth() > 100 && getParent().getHeight() >100) {
-//            setSize(getParent().getSize());
-//        }
-//        else{
-//            setSize(new Dimension(100,100));
-//        }
+
         //then load the photo
         if(isLoaded){
 
-
-            float rImg;
+            float rImg = (float)(photo.getWidth())/photo.getHeight();
             int newW = photo.getWidth();
             int newH = photo.getHeight();
-            rImg = photo.getWidth()/photo.getHeight();
+
+            float rWin = (float)(getWidth())/getHeight();
+
             pos = new Point();
             if(getWidth()>photo.getWidth() && getHeight()>photo.getHeight()){
                 pos.x = getWidth()/2-photo.getWidth()/2;
                 pos.y = getHeight()/2-photo.getHeight()/2;
             }
-            else if(photo.getHeight() >= getHeight()){
+            else if(getWidth() > photo.getWidth()){
+                newH = getHeight();
+                newW = (int)(newH*rImg);
+                pos.y = 0;
+                pos.x = getWidth()/2 - newW/2;
+            }
+            else if(getHeight() > photo.getWidth()){
+                newW = getWidth();
+                newH = (int)(newW/rImg);
+                pos.x = 0;
+                pos.y = getHeight()/2 - newH/2;
+            }
+            else if(rWin > rImg){
                 newH = getHeight();
                 newW = (int)(newH*rImg);
                 pos.y = 0;
