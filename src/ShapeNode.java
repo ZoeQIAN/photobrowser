@@ -15,6 +15,7 @@ public class ShapeNode extends Node {
     }
     public void setShape(Shape s){
         shape = s;
+        bound = shape.getBounds();
     }
     public Shape getShape(){
         return shape;

@@ -22,20 +22,6 @@ public class TextNode extends Node {
 
     public void setEditing(boolean editing) {
         isEditing = editing;
-//        if(isEditing){
-//            tInsertion = new Timer();
-//            tInsertion.schedule(new TimerTask() {
-//                @Override
-//                public void run() {
-//                    insertionDisplay = !insertionDisplay;
-//                }
-//            },500,500);
-//        }
-//        else if(tInsertion != null){
-//            tInsertion.cancel();
-//            tInsertion = null;
-//        }
-
     }
 
     Point insertPos;

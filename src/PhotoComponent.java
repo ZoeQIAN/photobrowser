@@ -1,6 +1,5 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.xml.soap.Text;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Ellipse2D;
@@ -8,7 +7,6 @@ import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Created by zqian on 20/09/2016.
@@ -135,7 +133,20 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         }
         Point p = e.getPoint();
         if(isFlipped && inBorder(p)){
-            updateShape(e.getPoint());
+            if(!drawing){
+                pressedPoint = e.getPoint();
+                if(chosenShape == PATH){
+                    path = new PathNode();
+                    back.addChild(path);
+                }
+                else {
+                    shape = new ShapeNode();
+                    shape.setColor(Color.black, Color.white);
+                    back.addChild(shape);
+                }
+                drawing = true;
+            }
+            updateShape(p);
         }
         repaint();
     }
@@ -153,6 +164,10 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
             }
             else{
                 shapeChooser.setVisible(false);
+                if(text!=null && text.text.isEmpty()){
+                    back.removeChild(text);
+                    text = null;
+                }
             }
             isTyping = false;
             if(graphicsRoot == null){
@@ -173,6 +188,9 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
             text.setEditing(true);
             back.addChild(text);
             requestFocusInWindow();
+        }
+        else if(!isFlipped){
+            
         }
         repaint();
     }
@@ -202,17 +220,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         Point p = e.getPoint();
 
         if(isFlipped && inBorder(p)){
-            pressedPoint = e.getPoint();
-            if(chosenShape == PATH){
-                path = new PathNode();
-                back.addChild(path);
-            }
-            else {
-                shape = new ShapeNode();
-                shape.setColor(Color.black, Color.white);
-                back.addChild(shape);
-            }
-            updateShape(p);
+
         }
 
         repaint();
@@ -296,6 +304,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
             pos.x = Math.max(pos.x,0);
             pos.y = Math.max(pos.y,0);
             if(isFlipped){
+                back.setShape(new Rectangle(newW,newH));
                 back.setPos(pos);
                 graphicsRoot.paint(g);
             }

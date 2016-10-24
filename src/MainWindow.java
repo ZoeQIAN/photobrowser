@@ -233,7 +233,12 @@ public class MainWindow extends JFrame{
 				photo.loadPhoto(f.getPath());
 				photoSet.add(photo);
 			}
-			setDisplayPhoto(photoSet.get(0));
+			if(mode != viewMode.BROWSER) {
+				setDisplayPhoto(photoSet.get(0));
+			}
+			else{
+				browser();
+			}
 
 	     }
 	}
@@ -283,18 +288,25 @@ public class MainWindow extends JFrame{
 		updateStatus("Browser");
 		mode = viewMode.BROWSER;
 		if(bPhotoPanel == null) {
-			int rowNum = photoSet.size() / 4;
 			bPhotoPanel = new JPanel();
-			bPhotoPanel.setLayout(new GridLayout(rowNum>3?rowNum:3,4));
+			bPhotoPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		}
 
-
-
-			for (PhotoComponent p : photoSet) {
-				p.setPreferredSize(new Dimension(200,200));
-				bPhotoPanel.add(p);
+		int colNum = 4;
+		int i=0;
+		JPanel tp = new JPanel(new GridLayout(1,colNum));
+		for (PhotoComponent p : photoSet) {
+			if(i%colNum == 0){
+				tp = new JPanel(new GridLayout(1,colNum));
+				bPhotoPanel.add(tp);
+				i = 0;
 			}
-			bPhotoPanel.setMaximumSize(new Dimension(getWidth(), bPhotoPanel.getHeight()));
+			p.setPreferredSize(new Dimension(100,100));
+			tp.add(p);
+			i++;
+		}
+		bPhotoPanel.add(tp);
+//			bPhotoPanel.setMaximumSize(new Dimension(getWidth(), bPhotoPanel.getHeight()));
 //		}
 		photoScrPane.setViewportView(bPhotoPanel);
 		repaint();
