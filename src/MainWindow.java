@@ -22,6 +22,7 @@ public class MainWindow extends JFrame{
 	}
 
 	viewMode mode;
+	private boolean filtered;
 
 	public static void main(String args[]){
 		MainWindow win = new MainWindow();
@@ -39,11 +40,16 @@ public class MainWindow extends JFrame{
 	private JPanel sPhotoPanel;
 
 	private ArrayList<PhotoComponent> photoSet;
+	private ArrayList<PhotoComponent> photoSetToDisplay;
 
-	static final private String FAMILY = "Family";
-	static final private String VACATION = "Vacation";
-	static final private String SCHOOL = "School";
+	static final public String ALL = "All";
+	static final public String FAMILY = "Family";
+	static final public String VACATION = "Vacation";
+	static final public String SCHOOL = "School";
 
+	private String category;
+	private ButtonGroup labelGroup;
+	private JToolBar toolBar;
 	private void initMenuBar(){
 		// menu bar
 		menuBar = new JMenuBar();
@@ -94,12 +100,18 @@ public class MainWindow extends JFrame{
 	}
 	private void initToolBar(){
 		//tool bar
-		JToolBar toolBar = new JToolBar();
+		toolBar = new JToolBar();
 		add(toolBar,BorderLayout.PAGE_START);
 
 		ButtonGroup labelGroup = new ButtonGroup();
 
-		JToggleButton tBtn = new JToggleButton(FAMILY);
+		JToggleButton tBtn = new JToggleButton(ALL);
+		tBtn.setActionCommand(ALL);
+		tBtn.addActionListener(event->categoryChosen(event));
+		toolBar.add(tBtn);
+		labelGroup.add(tBtn);
+
+		tBtn = new JToggleButton(FAMILY);
 		tBtn.setActionCommand(FAMILY);
 		tBtn.addActionListener(event->categoryChosen(event));
 		toolBar.add(tBtn);
@@ -117,6 +129,10 @@ public class MainWindow extends JFrame{
 		toolBar.add(tBtn);
 		labelGroup.add(tBtn);
 
+		JButton btn = new JButton("+");
+		btn.addActionListener(event->addCategory());
+		toolBar.add(btn);
+
 		// add next/previous button
 		toolBar.addSeparator();
 		JButton previousBtn = new JButton("Previous");
@@ -129,6 +145,23 @@ public class MainWindow extends JFrame{
 
 
 	}
+
+	private void addCategory(){
+		String s = (String)JOptionPane.showInputDialog(
+				null,
+				"Add a category:",
+				"Category",
+				JOptionPane.PLAIN_MESSAGE
+		);
+		if(s!=null && s.length()>0){
+			JToggleButton newBtn = new JToggleButton(s);
+
+			toolBar.add(newBtn, PhotoComponent.categories.length+1);
+			labelGroup.add(newBtn);
+			PhotoComponent.addCategory(s);
+		}
+
+	}
 	private void switchPhoto(boolean next){
 		if(next){
 			photoIdx+=1;
@@ -136,13 +169,13 @@ public class MainWindow extends JFrame{
 		else{
 			photoIdx-=1;
 		}
-		if(photoIdx == photoSet.size()){
+		if(photoIdx >= photoSetToDisplay.size()){
 			photoIdx = 0;
 		}
 		else if(photoIdx == -1){
-			photoIdx = photoSet.size()-1;
+			photoIdx = photoSetToDisplay.size()-1;
 		}
-		setDisplayPhoto(photoSet.get(photoIdx));
+		setDisplayPhoto(photoSetToDisplay.get(photoIdx));
 	}
 	private void initPhotoComp(){
         photo = new PhotoComponent();
@@ -165,6 +198,8 @@ public class MainWindow extends JFrame{
 		photoIdx = 0;
 
 		mode = viewMode.VIEWER;
+
+		filtered = false;
 
 		// window size
 		setPreferredSize(new Dimension(600,400));
@@ -194,27 +229,30 @@ public class MainWindow extends JFrame{
 				sPhotoPanel.repaint();
 			}
 			int prev, next;
-			prev = photoIdx-1<0?photoSet.size()-1:photoIdx-1;
-			next = photoIdx+1>=photoSet.size()?0:photoIdx+1;
+			prev = photoIdx-1<0?photoSetToDisplay.size()-1:photoIdx-1;
+			next = photoIdx+1>=photoSetToDisplay.size()?0:photoIdx+1;
 			photo = p;
 
-			photoSet.get(photoIdx).setPreferredSize(new Dimension(getWidth()/2, getHeight()));
-			photoSet.get(prev).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
-			photoSet.get(next).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
-			sPhotoPanel.add(photoSet.get(prev));
-			sPhotoPanel.add(photoSet.get(photoIdx));
-			sPhotoPanel.add(photoSet.get(next));
+			photoSetToDisplay.get(photoIdx).setPreferredSize(new Dimension(getWidth()/2, getHeight()));
+			photoSetToDisplay.get(prev).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
+			photoSetToDisplay.get(next).setPreferredSize(new Dimension(getWidth()/4, getHeight()));
+			sPhotoPanel.add(photoSetToDisplay.get(prev));
+			sPhotoPanel.add(photoSetToDisplay.get(photoIdx));
+			sPhotoPanel.add(photoSetToDisplay.get(next));
 			photoScrPane.setViewportView(sPhotoPanel);
 		}
 		repaint();
 	}
 
-	private void setDisplayPhoto(int idx){
-		if(idx >= photoSet.size()){
+	private void setDisplayPhoto(){
+		if(photoSetToDisplay.isEmpty()){
 			setDisplayPhoto(null);
 		}
 		else{
-			setDisplayPhoto(photoSet.get(photoIdx));
+			if(photoIdx >= photoSetToDisplay.size()){
+				photoIdx = 0;
+			}
+			setDisplayPhoto(photoSetToDisplay.get(photoIdx));
 		}
 	}
 
@@ -233,12 +271,7 @@ public class MainWindow extends JFrame{
 				photo.loadPhoto(f.getPath());
 				photoSet.add(photo);
 			}
-			if(mode != viewMode.BROWSER) {
-				setDisplayPhoto(photoSet.get(0));
-			}
-			else{
-				browser();
-			}
+			update();
 
 	     }
 	}
@@ -252,6 +285,17 @@ public class MainWindow extends JFrame{
 		}
 		else{
 			statusBar.setText(statusBar.getText()+" "+str);
+		}
+	}
+
+	private void update(){
+		filterPhoto();
+		if(mode != viewMode.BROWSER) {
+				setDisplayPhoto();
+
+		}
+		else{
+			browser();
 		}
 	}
 	
@@ -281,7 +325,7 @@ public class MainWindow extends JFrame{
 		updateStatus("Photo viewer");
 //		getContentPane().removeAll();
 		mode = viewMode.VIEWER;
-		setDisplayPhoto(photoIdx);
+		setDisplayPhoto();
 	}
 	
 	private void browser(){
@@ -291,11 +335,13 @@ public class MainWindow extends JFrame{
 			bPhotoPanel = new JPanel();
 			bPhotoPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		}
-
+		else{
+			bPhotoPanel.removeAll();
+		}
 		int colNum = 4;
 		int i=0;
 		JPanel tp = new JPanel(new GridLayout(1,colNum));
-		for (PhotoComponent p : photoSet) {
+		for (PhotoComponent p : photoSetToDisplay) {
 			if(i%colNum == 0){
 				tp = new JPanel(new GridLayout(1,colNum));
 				bPhotoPanel.add(tp);
@@ -316,7 +362,7 @@ public class MainWindow extends JFrame{
 		updateStatus("Split Mode");
 
 		mode = viewMode.SPLIT;
-		setDisplayPhoto(photoIdx);
+		setDisplayPhoto();
 		repaint();
 	}
 	
@@ -324,11 +370,29 @@ public class MainWindow extends JFrame{
 		Object src = e.getSource();
 		if(src instanceof JToggleButton){
 			JToggleButton btn = (JToggleButton)src;
-			if(btn.isSelected()){
+			if(btn.isSelected() && !btn.getText().equals(ALL)){
+				filtered = true;
 				updateStatus(btn.getText()+" toggled");
+				category = btn.getText();
 			}
 			else{
 				updateStatus(btn.getText()+" untoggled");
+				filtered = false;
+				category = null;
+			}
+			update();
+		}
+	}
+	private void filterPhoto(){
+		if(category == null){
+			photoSetToDisplay = photoSet;
+		}
+		else{
+			photoSetToDisplay = new ArrayList<>();
+			for(PhotoComponent p : photoSet){
+				if(p.isCategory(category)) {
+					photoSetToDisplay.add(p);
+				}
 			}
 		}
 	}

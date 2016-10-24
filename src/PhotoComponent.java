@@ -7,6 +7,8 @@ import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+
 
 /**
  * Created by zqian on 20/09/2016.
@@ -36,6 +38,9 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
     final static String RECTANGLE = "Rectangle";
     final static String PATH = "Path";
 
+    static Object categories[] = {MainWindow.FAMILY, MainWindow.VACATION, MainWindow.SCHOOL};
+
+    private String cat;// category
     public PhotoComponent() {
         setSize(new Dimension(200,300));
         setPreferredSize(new Dimension(200,300));
@@ -85,6 +90,14 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         shapeGroup.add(path);
 
         shapeGroup.setSelected(line.getModel(),true);
+    }
+
+    static public void addCategory(String s){
+        categories = Arrays.copyOf(categories, categories.length+1);
+        categories[categories.length-1] = s;
+    }
+    public boolean isCategory(String s){
+        return cat!=null && cat.equals(s);
     }
 
     private void shapeChosen(ActionEvent e){
@@ -155,44 +168,79 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
 
     }
 
+    boolean doubleClick;
     public void mouseClicked(MouseEvent e){
         if(e.getClickCount()==2){
-            isFlipped = !isFlipped;
-            if(isFlipped){
-                shapeChooser.setVisible(true);
-                chosenShape = LINE;
-            }
-            else{
-                shapeChooser.setVisible(false);
-                if(text!=null && text.text.isEmpty()){
-                    back.removeChild(text);
-                    text = null;
+            doubleClick = true;
+            doubleClick(e);
+        }
+        else if(e.getClickCount() ==1) {
+            doubleClick = false;
+            Timer t = new Timer(500, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent evt) {
+                    if(!doubleClick){
+                        singleClick(e);
+                    }
                 }
-            }
-            isTyping = false;
-            if(graphicsRoot == null){
-                graphicsRoot = new RootNode();
-                back = new ShapeNode(new Rectangle(photo.getWidth(),photo.getHeight()));
-                back.setColor(Color.black, Color.white);
-                graphicsRoot.addChild(back);
-            }
-            back.setPos(pos);
-        }
-        else if(e.getClickCount() ==1 && isFlipped && inBorder(e.getPoint())){
-            if(text != null && isTyping){
-                text.setEditing(false);
-                text = null;
-            }
-            isTyping = true;
-            text = new TextNode(new Point(e.getX()-back.getPos().x, e.getY()-back.getPos().y));
-            text.setEditing(true);
-            back.addChild(text);
-            requestFocusInWindow();
-        }
-        else if(!isFlipped){
-            
+            });
+            t.setRepeats(false);
+            t.start();
         }
         repaint();
+    }
+
+    private void doubleClick(MouseEvent e){
+        isFlipped = !isFlipped;
+        if(isFlipped){
+            shapeChooser.setVisible(true);
+            chosenShape = LINE;
+        }
+        else{
+            shapeChooser.setVisible(false);
+            if(text!=null && text.text.isEmpty()){
+                back.removeChild(text);
+                text = null;
+            }
+        }
+        isTyping = false;
+        if(graphicsRoot == null){
+            graphicsRoot = new RootNode();
+            back = new ShapeNode(new Rectangle(photo.getWidth(),photo.getHeight()));
+            back.setColor(Color.black, Color.white);
+            graphicsRoot.addChild(back);
+        }
+        back.setPos(pos);
+    }
+
+    private void singleClick(MouseEvent e){
+        if(inBorder(e.getPoint())) {
+            if (isFlipped) {
+                if (text != null && isTyping) {
+                    text.setEditing(false);
+                    text = null;
+                }
+                isTyping = true;
+                text = new TextNode(new Point(e.getX() - back.getPos().x, e.getY() - back.getPos().y));
+                text.setEditing(true);
+                back.addChild(text);
+                requestFocusInWindow();
+            }
+            if (!isFlipped) {
+                String s = (String) JOptionPane.showInputDialog(
+                        null,
+                        "Add category:",
+                        "Category",
+                        JOptionPane.PLAIN_MESSAGE,
+                        null,
+                        categories,
+                        cat == null ? categories[0] : cat
+                );
+                if (s != null && s.length() > 0) {
+                    cat = s;
+                }
+            }
+        }
     }
 
     public void mouseExited(MouseEvent e){
