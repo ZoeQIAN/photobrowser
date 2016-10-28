@@ -58,6 +58,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         initShapeChooser();
     }
 
+    // initialize the shape chooser toolbar
     private void initShapeChooser(){
         shapeChooser = new JToolBar();
         add(shapeChooser,BorderLayout.NORTH);
@@ -96,10 +97,14 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         categories = Arrays.copyOf(categories, categories.length+1);
         categories[categories.length-1] = s;
     }
+
+    // judge whether of a certain category
+    // when it is non-null and the two strings equal to each other, return true
     public boolean isCategory(String s){
         return cat!=null && cat.equals(s);
     }
 
+    // update the chosen shape information
     private void shapeChosen(ActionEvent e){
         System.out.println("Shape chosen");
         chosenShape = e.getActionCommand();
@@ -107,6 +112,8 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
 
     Point pressedPoint;
     String chosenShape;
+
+    // add a new point and update the coresponding shape
     private void updateShape(Point p){
         int x = pressedPoint.x-pos.x;
         int y = pressedPoint.y-pos.y;
@@ -140,11 +147,15 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
 
 
     public void mouseDragged(MouseEvent e){
+        // dragged only invoke drawing
+        // disable text editing
         if(text!=null){
             text.setEditing(false);
             text = null;
         }
         Point p = e.getPoint();
+        // when flipped and clicked inborder
+        // drawing the corresponding shape
         if(isFlipped && inBorder(p)){
             if(!drawing){
                 pressedPoint = e.getPoint();
@@ -159,6 +170,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
                 }
                 drawing = true;
             }
+            //add point to the shape
             updateShape(p);
         }
         repaint();
@@ -170,6 +182,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
 
     boolean doubleClick;
     public void mouseClicked(MouseEvent e){
+        // use timer to distinguish single click / double click
         if(e.getClickCount()==2){
             doubleClick = true;
             doubleClick(e);
@@ -190,20 +203,29 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         repaint();
     }
 
+    //if double click , flip the photo
+    // switch between the two mode
     private void doubleClick(MouseEvent e){
         isFlipped = !isFlipped;
         if(isFlipped){
+            // if flipped, show the shape chooser for drawing
             shapeChooser.setVisible(true);
+            // the default chosen shape is line
             chosenShape = LINE;
         }
         else{
+            // if flipped back, hide the shape choose tool bar
             shapeChooser.setVisible(false);
+            // when the created new text object is empty
+            // remove it
             if(text!=null && text.text.isEmpty()){
                 back.removeChild(text);
                 text = null;
             }
         }
         isTyping = false;
+
+        // initialize the root node
         if(graphicsRoot == null){
             graphicsRoot = new RootNode();
             back = new ShapeNode(new Rectangle(photo.getWidth(),photo.getHeight()));
@@ -250,6 +272,9 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
     }
 
     public void mouseReleased(MouseEvent e){
+        // when mouse released
+        // determine whether the new created shapes is empty
+        // if empty, remove them from the list
         drawing = false;
         if(shape != null && shape.getShape()==null){
             back.removeChild(shape);
@@ -260,18 +285,13 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         repaint();
     }
 
-    private boolean inBorder(Point p){
-        return p.getX()<=rightBorder && p.getX() >=leftBorder && p.getY()<= downBorder && p.getY()>= upperBorder;
+    public void mousePressed(MouseEvent e){
+        
     }
 
-    public void mousePressed(MouseEvent e){
-        Point p = e.getPoint();
-
-        if(isFlipped && inBorder(p)){
-
-        }
-
-        repaint();
+    // to judge whehter a point is inside the photo or not
+    private boolean inBorder(Point p){
+        return p.getX()<=rightBorder && p.getX() >=leftBorder && p.getY()<= downBorder && p.getY()>= upperBorder;
     }
 
 
@@ -283,7 +303,6 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         if(isTyping){
             text.addChar(e.getKeyChar());
             repaint();
-
         }
     }
 
@@ -308,6 +327,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
         //then load the photo
         if(isLoaded){
 
+            // resizing if the photo is too large to fit the window
             float rImg = (float)(photo.getWidth())/photo.getHeight();
             int newW = photo.getWidth();
             int newH = photo.getHeight();
@@ -344,6 +364,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
                 pos.y = getHeight()/2 - newH/2;
             }
 
+            // update the border of the image
             leftBorder = pos.x;
             rightBorder = getWidth()-pos.x;
             upperBorder = pos.y;
@@ -351,12 +372,15 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
 
             pos.x = Math.max(pos.x,0);
             pos.y = Math.max(pos.y,0);
+
+            // if flipped, paint the scene graph tree
             if(isFlipped){
                 back.setShape(new Rectangle(newW,newH));
                 back.setPos(pos);
                 graphicsRoot.paint(g);
             }
             else{
+                // if not ,draw the photo
                 g.drawImage(photo, pos.x,pos.y, newW, newH, null);
             }
 
@@ -378,30 +402,8 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
 
 
 
-    /**
-    * get and set functions
-    */
-    public boolean isFlipped() {
-        return isFlipped;
-    }
 
-    public BufferedImage getPhoto() {
-        return photo;
-    }
 
-    public String getStateInfo() {
-        return stateInfo;
-    }
-
-    public void setFlipped(boolean flipped) {
-        isFlipped = flipped;
-    }
-
-    public void setStateInfo(String stateInfo) {
-        this.stateInfo = stateInfo;
-    }
-
-    private String stateInfo;
     private BufferedImage photo;
     private boolean isFlipped;
     private boolean isLoaded;

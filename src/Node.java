@@ -61,12 +61,15 @@ public abstract class Node {
 
     protected void paint(Graphics2D g){
         if(isVisible){
+            // draw the children
             for (Node nn : children) {
+                // apply affine transform to the graphics
                 AffineTransform trns = g.getTransform();
                 AffineTransform trns_backup = new AffineTransform(g.getTransform());
                 trns.translate(nn.getPos().getX(), nn.getPos().getY());
                 g.setTransform(trns);
                 nn.paint(g);
+                // reset the affine transform
                 g.setTransform(trns_backup);
             }
         }

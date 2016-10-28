@@ -36,10 +36,12 @@ public class MainWindow extends JFrame{
 	private JScrollPane photoScrPane;
 	private PhotoComponent photo;
 	private int photoIdx;
-	private JPanel bPhotoPanel;
-	private JPanel sPhotoPanel;
+	private JPanel bPhotoPanel; // the jpanel in browser mode
+	private JPanel sPhotoPanel;	// the jpanel in the split mode
 
+	// the imported photo set
 	private ArrayList<PhotoComponent> photoSet;
+	// to photo set to display, useful when filtering by category
 	private ArrayList<PhotoComponent> photoSetToDisplay;
 
 	static final public String ALL = "All";
@@ -48,6 +50,7 @@ public class MainWindow extends JFrame{
 	static final public String SCHOOL = "School";
 
 	private String category;
+	// category group
 	private ButtonGroup labelGroup;
 	private JToolBar toolBar;
 	private void initMenuBar(){
@@ -103,7 +106,7 @@ public class MainWindow extends JFrame{
 		toolBar = new JToolBar();
 		add(toolBar,BorderLayout.PAGE_START);
 
-		ButtonGroup labelGroup = new ButtonGroup();
+		labelGroup = new ButtonGroup();
 
 		JToggleButton tBtn = new JToggleButton(ALL);
 		tBtn.setActionCommand(ALL);
@@ -146,6 +149,7 @@ public class MainWindow extends JFrame{
 
 	}
 
+	// add a category to the category list
 	private void addCategory(){
 		String s = (String)JOptionPane.showInputDialog(
 				null,
@@ -162,6 +166,8 @@ public class MainWindow extends JFrame{
 		}
 
 	}
+
+	// switch to next/previous
 	private void switchPhoto(boolean next){
 		if(next){
 			photoIdx+=1;
@@ -177,11 +183,6 @@ public class MainWindow extends JFrame{
 		}
 		setDisplayPhoto(photoSetToDisplay.get(photoIdx));
 	}
-	private void initPhotoComp(){
-        photo = new PhotoComponent();
-        photoScrPane = new JScrollPane(photo);
-        add(photoScrPane,BorderLayout.CENTER);
-    }
 
 	public MainWindow(){
 		super("Photo Browser");
@@ -206,6 +207,7 @@ public class MainWindow extends JFrame{
 		pack();
 	}
 
+	// display a certain photo
 	private void setDisplayPhoto(PhotoComponent p){
 		if(photo != null){
 			removeMouseListener(photo);
@@ -244,6 +246,7 @@ public class MainWindow extends JFrame{
 		repaint();
 	}
 
+	// default to display
 	private void setDisplayPhoto(){
 		if(photoSetToDisplay.isEmpty()){
 			setDisplayPhoto(null);
@@ -288,6 +291,7 @@ public class MainWindow extends JFrame{
 		}
 	}
 
+	// update the display according to the display mode/ filter
 	private void update(){
 		filterPhoto();
 		if(mode != viewMode.BROWSER) {
@@ -383,6 +387,7 @@ public class MainWindow extends JFrame{
 			update();
 		}
 	}
+
 	private void filterPhoto(){
 		if(category == null){
 			photoSetToDisplay = photoSet;

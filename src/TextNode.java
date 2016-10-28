@@ -48,7 +48,9 @@ public class TextNode extends Node {
         int lineH = g.getFontMetrics().getHeight();
         g.setFont(new Font("New Times Roman",Font.PLAIN,fontSize));
         String line = "";
-        int lineN = 0;
+        int lineN = 0; // the line number
+
+        // calculating the word wrap
         for(String w:text){
             if(g.getFontMetrics().stringWidth(line+w)+ posToParent.x > parent.bound.width){
                 if(!line.isEmpty()){
@@ -72,9 +74,12 @@ public class TextNode extends Node {
                 line += w+' ';
             }
         }
+        // display the last line
         if(!line.isEmpty()){
             g.drawString(line,0,lineN*lineH);
         }
+
+        // then draw an insertion point
         insertPos = new Point(g.getFontMetrics().stringWidth(line), lineN*lineH );
         if(isEditing){
             g.setStroke(new BasicStroke(3));
