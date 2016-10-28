@@ -286,7 +286,7 @@ public class PhotoComponent extends JPanel implements MouseListener, MouseMotion
     }
 
     public void mousePressed(MouseEvent e){
-        
+
     }
 
     // to judge whehter a point is inside the photo or not

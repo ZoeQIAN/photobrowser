@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8102c204-f59e-4dcf-8172-5710b77fd605" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContainerNode.java" afterPath="$PROJECT_DIR$/src/ContainerNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainWindow.java" afterPath="$PROJECT_DIR$/src/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Node.java" afterPath="$PROJECT_DIR$/src/Node.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SceneGraphDisplay.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PhotoComponent.java" afterPath="$PROJECT_DIR$/src/PhotoComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextNode.java" afterPath="$PROJECT_DIR$/src/TextNode.java" />
     </list>
     <ignored path="PhotoBrowser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,8 +83,8 @@
       <file leaf-file-name="PhotoComponent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="288" column="8" selection-start-line="288" selection-start-column="8" selection-end-line="288" selection-end-column="8" />
+            <state relative-caret-position="238">
+              <caret line="269" column="0" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#PhotoComponent#0;class#PhotoComponent#0" expanded="false" />
@@ -197,7 +193,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/SceneGrapheDisplay.java" />
         <option value="$PROJECT_DIR$/src/ImageNode.java" />
-        <option value="$PROJECT_DIR$/src/SceneGraphDisplay.java" />
         <option value="$PROJECT_DIR$/src/RootNode.java" />
         <option value="$PROJECT_DIR$/src/PathNode.java" />
         <option value="$PROJECT_DIR$/src/ShapeNode.java" />
@@ -206,6 +201,7 @@
         <option value="$PROJECT_DIR$/src/Node.java" />
         <option value="$PROJECT_DIR$/src/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/PhotoComponent.java" />
+        <option value="$PROJECT_DIR$/src/SceneGraphDisplay.java" />
       </list>
     </option>
   </component>
@@ -1413,13 +1409,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SceneGrapheDisplay.java" />
-    <entry file="file://$PROJECT_DIR$/src/SceneGraphDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TextNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1520,10 +1509,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SceneGraphDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PhotoComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="288" column="8" selection-start-line="288" selection-start-column="8" selection-end-line="288" selection-end-column="8" />
+        <state relative-caret-position="238">
+          <caret line="269" column="0" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#PhotoComponent#0;class#PhotoComponent#0" expanded="false" />
